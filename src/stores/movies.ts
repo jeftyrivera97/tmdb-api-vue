@@ -1,13 +1,9 @@
 import { defineStore } from 'pinia'
-import { getPopularMovies, type Movie } from '../api'
+import { getPopularMovies } from '../api'
+import type { MoviesState, Movie } from "../interfaces/Movie";
+ 
 
-interface MoviesState {
-  movies: Movie[]
-  loading: boolean
-  error: string | null
-}
-
-export const useMoviesStore = defineStore('movies', {
+export const useMoviesStore = defineStore('tmdb-movies', {
   state: (): MoviesState => ({
     movies: [],
     loading: false,
@@ -22,11 +18,16 @@ export const useMoviesStore = defineStore('movies', {
       try {
         this.movies = await getPopularMovies()
       } catch (err) {
-        this.error = 'Error al cargar las películas. Por favor, intenta de nuevo.'
+        this.error = 'Error Loading Movies'
         console.error('Error fetching movies:', err)
       } finally {
         this.loading = false
       }
+    },
+
+    // Add a new movie to the store
+    addMovie(movie: Movie) {
+      this.movies.unshift(movie) // Add to the beginning of the array
     },
 
     clearMovies() {

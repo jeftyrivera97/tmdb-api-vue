@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import HomeComponent from '../components/HomeComponent.vue';
+
+HomeComponent
 
 </script>
 
 
 <template>
-    <div>
-        <h1>Home Page</h1>
-
-    </div>
+    <HomeComponent />
 </template>
 
 

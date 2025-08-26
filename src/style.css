@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
-/* Clases personalizadas para truncar texto */
+
+
+
+/* Custom classes to truncate text */
 @layer utilities {
   .line-clamp-2 {
     overflow: hidden;
