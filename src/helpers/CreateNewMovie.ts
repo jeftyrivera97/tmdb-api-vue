@@ -50,7 +50,7 @@ export const useCreateMovie = () => {
       }
 
       // Make POST request to Rails API
-      const response = await fetch('http://localhost:3000/api/v1/movies', {
+      const response = await fetch('http://127.0.0.1:3000/api/v1/movies', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

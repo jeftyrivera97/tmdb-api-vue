@@ -16,7 +16,7 @@ export const useDeleteMovie = () => {
 
     try {
       // Make DELETE request to Rails API
-      const response = await fetch(`http://localhost:3000/api/v1/movies/${movieId}`, {
+      const response = await fetch(`http://127.0.0.1:3000/api/v1/movies/${movieId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

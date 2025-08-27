@@ -8,6 +8,8 @@ import HomePage from "../pages/HomePage.vue";
 import LoginPage from "../pages/LoginPage.vue";
 import AdminPage from "../pages/AdminPage.vue";
 import MyMoviesPage from "../pages/MyMoviesPage.vue";
+import NotFound from "../pages/NotFound.vue";
+
 
 const routes: RouteRecordRaw[] = [
   { 
@@ -39,6 +41,11 @@ const routes: RouteRecordRaw[] = [
     path: "/mymovies", 
     name: "MyMovies", 
     component: MyMoviesPage 
+  },
+    {
+    path: '/:pathMatch(.*)*',  // Catch-all for unmatched routes
+    name: 'NotFound',
+    component: NotFound,
   },
 ];
 
